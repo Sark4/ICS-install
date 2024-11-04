@@ -14,7 +14,12 @@ Le script crée la hiérarchie de dossiers suivante dans `~/Documents/ICS` pour 
 ```
 Documents/ICS/
 ├── firmware/      # Dossiers pour les outils d'analyse de firmware
-├── tools/         # Outils de tests de pénétration ICS
+├── tools/         # Dossiers thématiques pour les outils de tests de pénétration ICS
+│   ├── scan/          # Outils de scan réseau et de détection
+│   ├── honeypot/      # Simulateurs et honeypots pour attirer les attaques
+│   ├── exploitation/  # Frameworks et outils d'exploitation des vulnérabilités
+│   ├── analysis/      # Outils d'analyse de trafic et de paquets réseau
+│   └── protocol/      # Outils pour interagir avec les protocoles industriels
 ├── framework/     # Frameworks pour l'exploitation de vulnérabilités ICS
 ├── logs/          # Journaux de logs des analyses
 ├── scans/         # Résultats des scans de sécurité
@@ -51,6 +56,8 @@ Voici une liste des outils installés par le script, chacun étant placé dans l
 - **ModScan** : Analyse des protocoles Modbus/TCP et DNP3.
 - **pyModbus** : Bibliothèque Python pour interagir avec les dispositifs Modbus.
 - **Mbtget** : Scanner Modbus pour diagnostiquer les échanges de données.
+- **Snap7** : Bibliothèque pour interagir avec les automates Siemens S7.
+- **Hydrabus** : Outil pour interagir avec les bus industriels comme I2C et SPI.
 
 ### Outils pour les tests d'intrusion SCADA
 
@@ -73,17 +80,12 @@ Voici une liste des outils installés par le script, chacun étant placé dans l
 - **Firmware Analysis Toolkit** : Framework d’analyse de firmware pour détecter les vulnérabilités dans les appareils ICS.
 - **Firmwalker** : Outil de recherche dans les firmwares pour identifier des failles potentielles.
 
-### Communication avec les bus industriels
-
-- **Snap7** : Bibliothèque pour interagir avec les automates Siemens S7.
-- **Hydrabus** : Outil de communication avec les bus industriels (I2C, SPI).
-
 ## Utilisation
 
-Chaque outil est installé et déplacé dans le sous-dossier correspondant (`tools`, `framework`, `firmware`, etc.). Une fois le script exécuté, accédez aux outils via leurs emplacements respectifs, par exemple :
+Chaque outil est installé et déplacé dans le sous-dossier correspondant (`scan`, `honeypot`, `exploitation`, `analysis`, `protocol`, etc.). Une fois le script exécuté, accédez aux outils via leurs emplacements respectifs, par exemple :
 
 ```bash
-cd ~/Documents/ICS/tools/
+cd ~/Documents/ICS/tools/scan/
 ./ModScan/modscan.py
 ```
 
