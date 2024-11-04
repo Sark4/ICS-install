@@ -13,13 +13,20 @@ Le script crée la hiérarchie de dossiers suivante dans `~/Documents/ICS` pour 
 
 ```
 Documents/ICS/
-├── firmware/      # Dossiers pour les outils d'analyse de firmware
+├── firmware/      # Outils pour l'analyse de firmware
 ├── tools/         # Dossiers thématiques pour les outils de tests de pénétration ICS
 │   ├── scan/          # Outils de scan réseau et de détection
 │   ├── honeypot/      # Simulateurs et honeypots pour attirer les attaques
 │   ├── exploitation/  # Frameworks et outils d'exploitation des vulnérabilités
 │   ├── analysis/      # Outils d'analyse de trafic et de paquets réseau
-│   └── protocol/      # Outils pour interagir avec les protocoles industriels
+│   ├── protocol/      # Outils pour interagir avec les protocoles industriels
+│   ├── log/           # Outils pour l'analyse des journaux
+│   ├── lorawan/       # Outils pour l'exploitation des réseaux LoRaWAN
+│   ├── zigbee/        # Outils pour l'exploitation des réseaux Zigbee
+│   ├── fuzzing/       # Outils de fuzzing pour tester les vulnérabilités
+│   ├── radio/         # Outils pour les communications radio
+│   ├── reverse/       # Outils de reverse engineering
+│   └── general/       # Outils généraux pour les pentests ICS
 ├── framework/     # Frameworks pour l'exploitation de vulnérabilités ICS
 ├── logs/          # Journaux de logs des analyses
 ├── scans/         # Résultats des scans de sécurité
@@ -37,7 +44,7 @@ Documents/ICS/
 2. Rendre le script exécutable et lancer l'installation :
    ```bash
    chmod +x install_ics_pentest.sh
-   sudo ./install_ics_pentest.sh
+   ./install_ics_pentest.sh
    ```
 
 **Remarque** : Ce script doit être exécuté avec les privilèges administrateur pour installer les dépendances et les outils.
@@ -55,30 +62,52 @@ Voici une liste des outils installés par le script, chacun étant placé dans l
 
 - **ModScan** : Analyse des protocoles Modbus/TCP et DNP3.
 - **pyModbus** : Bibliothèque Python pour interagir avec les dispositifs Modbus.
-- **Mbtget** : Scanner Modbus pour diagnostiquer les échanges de données.
-- **Snap7** : Bibliothèque pour interagir avec les automates Siemens S7.
-- **Hydrabus** : Outil pour interagir avec les bus industriels comme I2C et SPI.
-
-### Outils pour les tests d'intrusion SCADA
-
-- **SCADAPASS** : Outil de force brute pour tester les mots de passe des systèmes SCADA.
-- **PLCScan** : Détection et cartographie des appareils PLC dans un réseau industriel.
-- **Nmap avec scripts ICS** : Scan réseau avancé avec des scripts pour les protocoles et dispositifs industriels.
+- **mbtget** : Scanner Modbus pour diagnostiquer les échanges de données.
 
 ### Frameworks d'exploitation
 
 - **Metasploit Framework** : Framework avec modules pour exploiter les vulnérabilités SCADA et ICS.
-- **Industrial Exploitation Framework (IEF)** : Scripts d'exploitation des vulnérabilités SCADA et PLC.
-- **SCADAfence** : Ensemble d’outils de sécurité pour les réseaux IoT industriels.
+- **Bettercap** : Outil pour les attaques MITM et le contrôle des réseaux.
+- **ICS-S7comm** : Exploit pour le protocole S7comm des PLC Siemens.
+- **ISF pour Schneider Modicon** : Exploit pour les vulnérabilités connues des automates Schneider.
+
+### Dossier Log
+
+- **Plaso** : Outil pour l'analyse et l'extraction des journaux.
+
+### Dossier LoRaWAN
+
+- **ChirpOTLE** : Outil pour l'exploitation des réseaux LoRaWAN.
+
+### Dossier Zigbee
+
+- **KillerBee** : Outil pour l'exploitation des réseaux Zigbee.
+
+### Dossier Fuzzing
+
+- **Fuzzowski** : Outil pour les tests de fuzzing sur les protocoles industriels.
+
+### Dossier Radio
+
+- **gr-smart_meters** : Outil pour l'analyse des communications radio.
+
+### Dossier Reverse
+
+- **Binwalk** : Outil de reverse engineering pour les images de firmware.
+
+### Dossier General
+
+- **Scapy** : Outil pour la manipulation de paquets réseau.
+- **s7scan** : Scanner pour les dispositifs Siemens S7.
+- **Snap7** : Interface pour communiquer avec les automates Siemens.
+- **PLCScan** : Détection et cartographie des appareils PLC dans un réseau industriel.
+- **Modscan** : Scanner pour Modbus et autres protocoles industriels.
+- **SMOD** : Framework pour exploiter les vulnérabilités SCADA et ICS.
+- **ISF** : Framework pour les tests d'intrusion sur les systèmes industriels.
 
 ### Simulateurs et Honeypots
 
 - **Conpot** : Honeypot ICS pour simuler des environnements industriels et observer les tentatives d'attaque.
-
-### Outils d’analyse de firmware
-
-- **Firmware Analysis Toolkit** : Framework d’analyse de firmware pour détecter les vulnérabilités dans les appareils ICS.
-- **Firmwalker** : Outil de recherche dans les firmwares pour identifier des failles potentielles.
 
 ## Utilisation
 
